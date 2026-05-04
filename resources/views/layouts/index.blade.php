@@ -42,7 +42,7 @@
 
     <!-- Custom CSS -->
     @vite(['resources/js/app.js', 'resources/css/dashboard.css', 'resources/css/datatables.css',
-        'resources/css/datatable-gijac.css', 'resources/js/jquery-validator.init.js'])
+        'resources/css/datatable-gijac.css', 'resources/js/jquery-validator.init.js', 'resources/js/sistema.js'])
 
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>

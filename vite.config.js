@@ -22,6 +22,7 @@ export default defineConfig({
                 'resources/css/prescripciones.css',
                 'resources/css/precios.css',
 
+                'resources/js/sistema.js',
                 'resources/js/dashboard.js',
                 'resources/js/data.js',
                 'resources/js/landing.js',

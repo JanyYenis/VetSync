@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('historial_clinicos', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->bigIncrements('numero_consecutivo'); // 👈 clave
+            $table->unsignedBigInteger('numero_consecutivo')
+                ->autoIncrement()
+                ->unique();
             $table->string('codigo')->unique()->nullable();
             $table->uuid('cod_mascota');
             $table->uuid('cod_cliente');
