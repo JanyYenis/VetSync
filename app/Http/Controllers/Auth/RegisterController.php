@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Exceptions\ErrorException;
 use App\Http\Controllers\Controller;
 use App\Models\Empresa;
+use App\Models\Pais;
 use App\Models\Usuario;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -40,6 +41,15 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        $info['tipo_documentos'] = Usuario::darTipoDocumento();
+        $info['generos'] = Usuario::darTipoGenero();
+        $info['paises'] = Pais::where('estado', Pais::ACTIVO)->orderBy('nombre')->get();
+
+        return view('auth.register', $info);
     }
 
     /**

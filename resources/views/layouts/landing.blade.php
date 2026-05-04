@@ -51,22 +51,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#inicio">Inicio</a>
+                        <a class="nav-link active" href="{{ url('/') }}#inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
+                        <a class="nav-link" href="{{ url('/') }}#servicios">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#galeria">Galería</a>
+                        <a class="nav-link" href="{{ url('/') }}#galeria">Galería</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                        <a class="nav-link" href="{{ url('/') }}#testimonios">Testimonios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('precios') }}">Precios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
+                        <a class="nav-link" href="{{ url('/') }}#contacto">Contacto</a>
                     </li>
                 </ul>
                 @if (Route::has('login'))
@@ -113,10 +113,10 @@
                 <div class="col-lg-2 col-md-6">
                     <h6 class="fw-bold text-white mb-3">Enlaces</h6>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="{{ url('/') }}#inicio">Inicio</a></li>
+                        <li><a href="{{ url('/') }}#servicios">Servicios</a></li>
+                        <li><a href="{{ url('/') }}#galeria">Galería</a></li>
+                        <li><a href="{{ url('/') }}#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -131,7 +131,7 @@
                 <div class="col-lg-3">
                     <h6 class="fw-bold text-white mb-3">Contacto</h6>
                     <ul class="list-unstyled footer-links">
-                        <li><i class="bi bi-geo-alt me-2"></i>Av. Principal #123</li>
+                        <li><i class="bi bi-geo-alt me-2"></i>Corregimiento de Navarro, Callejón el recuerdo, Casa 46</li>
                         <li><i class="bi bi-telephone me-2"></i>+57 317 178 9584</li>
                         <li><i class="bi bi-envelope me-2"></i>info@gijac.com</li>
                     </ul>

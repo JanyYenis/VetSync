@@ -39,13 +39,5 @@ $(document).ready(function() {
             $('body').removeClass('sidebar-open');
             $('#sidebarOverlay').remove();
         });
-
-        // Logout
-        $('#logoutBtn').on('click', function(e) {
-            e.preventDefault();
-            sessionStorage.removeItem('vetcare_logged_in');
-            sessionStorage.removeItem('vetcare_user');
-            window.location.href = 'login.html';
-        });
     }
 });
