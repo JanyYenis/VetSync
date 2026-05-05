@@ -125,11 +125,11 @@
                             </ul>
                         </div>
                         <div class="pricing-card-footer">
-                            <a href="checkout.html?plan=basico"
+                            <a href="{{ route('checkout') }}?plan=basico"
                                 class="btn btn-outline-primary btn-lg w-100 rounded-pill btn-checkout" data-plan="basico">
                                 Comenzar ahora
                             </a>
-                            <p class="trial-text">14 dias de prueba gratis</p>
+                            <p class="trial-text">15 dias de prueba gratis</p>
                         </div>
                     </div>
                 </div>
@@ -203,11 +203,11 @@
                             </ul>
                         </div>
                         <div class="pricing-card-footer">
-                            <a href="checkout.html?plan=profesional"
+                            <a href="{{ route('checkout') }}?plan=profesional"
                                 class="btn btn-primary btn-lg w-100 rounded-pill btn-checkout" data-plan="profesional">
                                 Comenzar ahora
                             </a>
-                            <p class="trial-text">14 dias de prueba gratis</p>
+                            <p class="trial-text">15 dias de prueba gratis</p>
                         </div>
                     </div>
                 </div>
@@ -282,7 +282,7 @@
                             </ul>
                         </div>
                         <div class="pricing-card-footer">
-                            <a href="checkout.html?plan=empresarial"
+                            <a href="{{ route('checkout') }}?plan=empresarial"
                                 class="btn btn-outline-primary btn-lg w-100 rounded-pill btn-checkout"
                                 data-plan="empresarial">
                                 Comenzar ahora
@@ -487,7 +487,7 @@
                 <div class="col-lg-8 text-center">
                     <h2 class="display-6 fw-bold mb-3" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
                     <p class="lead text-muted" data-aos="fade-up" data-aos-delay="100">
-                        Miles de clinicas veterinarias ya confian en VetCare Pro
+                        Miles de clinicas veterinarias ya confian en VetSync
                     </p>
                 </div>
             </div>
@@ -503,7 +503,7 @@
                             <i class="bi bi-star-fill"></i>
                         </div>
                         <p class="testimonial-text">
-                            "VetCare Pro transformo completamente la gestion de nuestra clinica. El dashboard nos da
+                            "VetSync transformo completamente la gestion de nuestra clinica. El dashboard nos da
                             visibilidad total de nuestras operaciones."
                         </p>
                         <div class="testimonial-author">
@@ -613,7 +613,7 @@
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Si! Todos nuestros planes incluyen 14 dias de prueba gratuita con acceso completo a
+                                    Si! Todos nuestros planes incluyen 15 dias de prueba gratuita con acceso completo a
                                     todas las funcionalidades. No necesitas tarjeta de credito para comenzar.
                                 </div>
                             </div>
@@ -700,8 +700,8 @@
                         Listo para transformar tu clinica?
                     </h2>
                     <p class="lead text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
-                        Unete a mas de 2,500 clinicas veterinarias que ya optimizan su gestion con VetCare Pro. Comienza tu
-                        prueba gratuita de 14 dias hoy mismo.
+                        Unete a mas de 2,500 clinicas veterinarias que ya optimizan su gestion con VetSync. Comienza tu
+                        prueba gratuita de 15 dias hoy mismo.
                     </p>
                     <div class="d-flex justify-content-center gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="200">
                         <a href="register.html" class="btn btn-light btn-lg px-5 rounded-pill">

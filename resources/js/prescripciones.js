@@ -1,6 +1,6 @@
 /**
  * ========================================
- * VetCare Pro - Prescription Module
+ * VetSync - Prescription Module
  * ========================================
  * Modulo de prescripcion medica veterinaria
  * con firma electronica y exportacion a PDF

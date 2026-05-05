@@ -14,6 +14,9 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard
 Route::get('/precios', function () {
     return view('precios');
 })->name('precios');
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
 Route::get('/perfil', [UsuarioController::class, 'perfil'])->name('perfil');
 Route::prefix('paises')
     ->as("paises.")
@@ -49,3 +52,13 @@ Route::prefix('prescripciones')
     ->as("prescripciones.")
     ->middleware(['web', 'auth'])
     ->group(base_path('routes/web/prescripciones/principal.php'));
+
+Route::prefix('planes')
+    ->as("planes.")
+    ->middleware(['web', 'auth'])
+    ->group(base_path('routes/web/planes/principal.php'));
+
+Route::prefix('clinicas')
+    ->as("clinicas.")
+    ->middleware(['web', 'auth'])
+    ->group(base_path('routes/web/clinicas/principal.php'));

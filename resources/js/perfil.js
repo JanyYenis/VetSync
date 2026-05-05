@@ -1,5 +1,5 @@
 /**
- * VetCare Pro - Profile Module
+ * VetSync - Profile Module
  * Modulo de perfil de usuario con validaciones y simulaciones
  */
 
@@ -431,7 +431,7 @@ $(document).ready(function() {
                 codes.push($(this).text());
             });
 
-            const content = "VetCare Pro - Codigos de Respaldo 2FA\n\n" +
+            const content = "VetSync - Codigos de Respaldo 2FA\n\n" +
                            "Guarda estos codigos en un lugar seguro.\n" +
                            "Cada codigo solo puede usarse una vez.\n\n" +
                            codes.join('\n');

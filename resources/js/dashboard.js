@@ -1,5 +1,5 @@
 /* ========================================
-   VetCare Pro - Dashboard Scripts
+   VetSync - Dashboard Scripts
    ======================================== */
 
 let clientesChart, mascotasChart;
@@ -39,9 +39,9 @@ $(document).ready(function() {
                 $('#totalPrescripciones').text(response?.cantidad_prescipciones ?? 0);
 
                 // Render charts
-                renderClientesChart();
-                renderMascotasChart();
-                renderUltimasConsultas();
+                renderClientesChart(response?.label_clientes_por_mes, response?.serie_clientes_por_mes);
+                renderMascotasChart(response?.label_tipo_mascotas, response?.serie_tipo_mascotas);
+                renderUltimasConsultas(response?.ultimas_consultas);
             }
             generalidades.ocultarCargando('body');
             generalidades.toastrGenerico(response?.estado, response?.mensaje);
@@ -56,7 +56,7 @@ $(document).ready(function() {
         generalidades.mostrarCargando('body');
     }
 
-    function renderClientesChart() {
+    function renderClientesChart(label_clientes_por_mes, serie_clientes_por_mes) {
         const ctx = document.getElementById('clientesChart');
         if (!ctx) return;
 
@@ -65,8 +65,8 @@ $(document).ready(function() {
         }
 
         // Simulated monthly data
-        const monthlyData = [12, 19, 15, 25, 22, 30, 28, 35, 40, 38, 45, 50];
-        const labels = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+        const monthlyData = serie_clientes_por_mes;
+        const labels = label_clientes_por_mes;
 
         clientesChart = new Chart(ctx, {
             type: 'line',
@@ -109,7 +109,7 @@ $(document).ready(function() {
         });
     }
 
-    function renderMascotasChart() {
+    function renderMascotasChart(label_tipo_mascotas, serie_tipo_mascotas) {
         const ctx = document.getElementById('mascotasChart');
         if (!ctx) return;
 
@@ -117,9 +117,8 @@ $(document).ready(function() {
             mascotasChart.destroy();
         }
 
-        const stats = VetData.getStats();
-        const labels = Object.keys(stats.mascotasPorTipo);
-        const data = Object.values(stats.mascotasPorTipo);
+        const labels = label_tipo_mascotas;
+        const data = serie_tipo_mascotas;
         const colors = ['#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
         mascotasChart = new Chart(ctx, {
@@ -150,28 +149,27 @@ $(document).ready(function() {
         });
     }
 
-    function renderUltimasConsultas() {
+    function renderUltimasConsultas(ultimas_consultas) {
         const $container = $('#ultimasConsultas');
         $container.empty();
 
-        const ultimasConsultas = VetData.historial.slice(-5).reverse();
-
-        if (ultimasConsultas.length === 0) {
+        if (ultimas_consultas.length === 0) {
             $container.html('<div class="p-4 text-center text-muted">No hay consultas registradas</div>');
             return;
         }
 
-        ultimasConsultas.forEach(function(consulta) {
-            const mascota = VetData.getMascota(consulta.mascotaId);
-            const mascotaNombre = mascota ? mascota.nombre : 'Desconocido';
-            const iconClass = mascota && mascota.tipo === 'Perro' ? 'bi-heart' : 'bi-heart-fill';
-            const bgClass = mascota && mascota.tipo === 'Perro' ? 'bg-primary-subtle' : 'bg-success-subtle';
-            const textClass = mascota && mascota.tipo === 'Perro' ? 'text-primary' : 'text-success';
+        ultimas_consultas.forEach(function(consulta) {
+            const mascota = consulta?.historial?.mascota ?? '';
+            const propietario = consulta?.historial?.propietario ?? '';
+            const mascotaNombre = mascota?.nombre ? `${mascota?.nombre} - ${propietario?.nombre}` : 'Desconocido';
+            const iconClass = mascota?.info_tipo?.icono ?? '';
+            const bgClass = mascota?.info_tipo?.color ?? 'success';
+            const textClass = mascota?.info_tipo?.color ?? 'success';
 
             $container.append(`
                 <div class="activity-item">
-                    <div class="activity-icon ${bgClass}">
-                        <i class="bi ${iconClass} ${textClass}"></i>
+                    <div class="activity-icon bg-${bgClass}-subtle">
+                        <i class="fa ${iconClass} text-${textClass}"></i>
                     </div>
                     <div class="activity-info">
                         <h6>${mascotaNombre}</h6>
@@ -606,7 +604,7 @@ $(document).ready(function() {
         doc.setTextColor(255, 255, 255);
         doc.setFontSize(24);
         doc.setFont('helvetica', 'bold');
-        doc.text('VetCare Pro', 20, 25);
+        doc.text('VetSync', 20, 25);
 
         doc.setFontSize(12);
         doc.setFont('helvetica', 'normal');
@@ -693,7 +691,7 @@ $(document).ready(function() {
         doc.setFontSize(8);
         doc.setTextColor(100, 100, 100);
         doc.text('Este documento es válido por 30 días a partir de la fecha de emisión.', 105, 288, { align: 'center' });
-        doc.text('VetCare Pro - Cuidamos a tu mejor amigo', 105, 294, { align: 'center' });
+        doc.text('VetSync - Cuidamos a tu mejor amigo', 105, 294, { align: 'center' });
 
         // Save
         doc.save(`prescripcion_${prescripcion.id}_${mascota ? mascota.nombre : 'paciente'}.pdf`);

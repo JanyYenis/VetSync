@@ -152,7 +152,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h5 class="card-title mb-0">Últimas Consultas</h5>
-                            <a href="#" class="btn btn-sm btn-link" data-page="historial">Ver todas</a>
+                            <a href="{{ route('historiales.index') }}" class="btn btn-sm btn-link" data-page="historial">Ver todas</a>
                         </div>
                         <div class="card-body p-0">
                             <div class="activity-list" id="ultimasConsultas">
@@ -423,7 +423,7 @@
                             <form>
                                 <div class="mb-3">
                                     <label class="form-label">Nombre de la Clínica</label>
-                                    <input type="text" class="form-control" value="VetCare Pro">
+                                    <input type="text" class="form-control" value="VetSync">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Dirección</label>

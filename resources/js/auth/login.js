@@ -1,5 +1,5 @@
 /* ========================================
-   VetCare Pro - Login Scripts
+   VetSync - Login Scripts
    ======================================== */
 
 $(document).ready(function() {
@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('#togglePassword').on('click', function() {
         const $password = $('#password');
         const $icon = $(this).find('i');
-        
+
         if ($password.attr('type') === 'password') {
             $password.attr('type', 'text');
             $icon.removeClass('bi-eye').addClass('bi-eye-slash');
@@ -26,34 +26,34 @@ $(document).ready(function() {
     // ==========================================
     $('#loginForm').on('submit', function(e) {
         e.preventDefault();
-        
+
         const username = $('#username').val().trim();
         const password = $('#password').val().trim();
-        
+
         // Reset previous errors
         resetErrors();
-        
+
         // Validate fields
         let hasErrors = false;
-        
+
         if (!username) {
             showError('username', 'Por favor ingresa tu usuario');
             hasErrors = true;
         }
-        
+
         if (!password) {
             showError('password', 'Por favor ingresa tu contraseña');
             hasErrors = true;
         }
-        
+
         if (hasErrors) return;
-        
+
         // Show loading state
         const $btn = $('#loginBtn');
         $btn.find('.btn-text').addClass('d-none');
         $btn.find('.btn-loader').removeClass('d-none');
         $btn.prop('disabled', true);
-        
+
         // Simulate login verification
         setTimeout(function() {
             // Check credentials (simulated)
@@ -65,20 +65,20 @@ $(document).ready(function() {
                     name: 'Dr. Admin',
                     role: 'Administrador'
                 }));
-                
+
                 // Remember me
                 if ($('#rememberMe').is(':checked')) {
                     localStorage.setItem('vetcare_remember', username);
                 } else {
                     localStorage.removeItem('vetcare_remember');
                 }
-                
+
                 // Redirect to dashboard
                 window.location.href = 'dashboard.html';
             } else {
                 // Error
                 showLoginError('Usuario o contraseña incorrectos');
-                
+
                 // Reset button
                 $btn.find('.btn-text').removeClass('d-none');
                 $btn.find('.btn-loader').addClass('d-none');
@@ -93,7 +93,7 @@ $(document).ready(function() {
     function showError(field, message) {
         const $input = $(`#${field}`);
         const $error = $(`#${field}Error`);
-        
+
         $input.addClass('is-invalid');
         $error.text(message).show();
     }
@@ -101,10 +101,10 @@ $(document).ready(function() {
     function showLoginError(message) {
         const $alert = $('#loginError');
         const $text = $('#loginErrorText');
-        
+
         $text.text(message);
         $alert.removeClass('d-none');
-        
+
         // Shake animation
         $alert.addClass('animate__animated animate__shakeX');
         setTimeout(function() {

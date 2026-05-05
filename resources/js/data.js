@@ -1,5 +1,5 @@
 /* ========================================
-   VetCare Pro - Data Store (Simulated)
+   VetSync - Data Store (Simulated)
    ======================================== */
 
 // Initialize data from localStorage or use defaults

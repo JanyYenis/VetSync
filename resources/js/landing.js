@@ -1,5 +1,5 @@
 /* ========================================
-   VetCare Pro - Landing Page Scripts
+   VetSync - Landing Page Scripts
    ======================================== */
 
 $(document).ready(function() {
@@ -26,7 +26,7 @@ $(document).ready(function() {
             $('html, body').animate({
                 scrollTop: target.offset().top - 80
             }, 800);
-            
+
             // Close mobile menu if open
             $('.navbar-collapse').collapse('hide');
         }
@@ -37,12 +37,12 @@ $(document).ready(function() {
     // ==========================================
     $(window).on('scroll', function() {
         const scrollPos = $(this).scrollTop();
-        
+
         $('section[id]').each(function() {
             const top = $(this).offset().top - 100;
             const bottom = top + $(this).outerHeight();
             const id = $(this).attr('id');
-            
+
             if (scrollPos >= top && scrollPos < bottom) {
                 $('.nav-link').removeClass('active');
                 $(`.nav-link[href="#${id}"]`).addClass('active');
@@ -79,24 +79,24 @@ $(document).ready(function() {
     // ==========================================
     $('#contactForm').on('submit', function(e) {
         e.preventDefault();
-        
+
         const $form = $(this);
         const $btn = $form.find('button[type="submit"]');
         const originalText = $btn.html();
-        
+
         // Show loading state
         $btn.html('<span class="spinner-border spinner-border-sm me-2"></span>Enviando...');
         $btn.prop('disabled', true);
-        
+
         // Simulate form submission
         setTimeout(function() {
             // Reset form
             $form[0].reset();
-            
+
             // Show success message
             $btn.html('<i class="bi bi-check-lg me-2"></i>Mensaje Enviado');
             $btn.removeClass('btn-primary').addClass('btn-success');
-            
+
             // Reset button after 3 seconds
             setTimeout(function() {
                 $btn.html(originalText);
@@ -111,11 +111,11 @@ $(document).ready(function() {
     // ==========================================
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.service-card, .gallery-item, .testimonial-card');
-        
+
         elements.forEach(function(el) {
             const elementTop = el.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            
+
             if (elementTop < windowHeight - 100) {
                 el.style.opacity = '1';
                 el.style.transform = 'translateY(0)';
@@ -142,11 +142,11 @@ $(document).ready(function() {
             const $this = $(this);
             const text = $this.text();
             const match = text.match(/(\d+)/);
-            
+
             if (match && !$this.hasClass('counted')) {
                 const target = parseInt(match[0]);
                 $this.addClass('counted');
-                
+
                 $({ count: 0 }).animate({ count: target }, {
                     duration: 2000,
                     easing: 'swing',
@@ -173,7 +173,7 @@ $(document).ready(function() {
                 }
             });
         }, { threshold: 0.5 });
-        
+
         observer.observe(heroSection);
     }
 

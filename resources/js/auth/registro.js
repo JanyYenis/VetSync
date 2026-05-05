@@ -1,5 +1,5 @@
 /* ========================================
-   VetCare Pro - Register Page Scripts
+   VetSync - Register Page Scripts
    ======================================== */
 
 $(document).ready(function() {

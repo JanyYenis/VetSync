@@ -54,4 +54,9 @@ class Consulta extends Model
             $model->id = Str::uuid();
         });
     }
+
+    public function historial()
+    {
+        return $this->belongsTo(HistorialClinico::class, 'cod_historial', 'id');
+    }
 }

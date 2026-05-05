@@ -59,9 +59,21 @@
             <span class="nav-section-title">Sistema</span>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-page="configuracion">
-                        <i class="bi bi-gear"></i>
-                        <span>Configuración</span>
+                    <a class="nav-link" href="#" data-page="usuarios">
+                        <i class="bi bi-person-workspace"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('planes.index') }}" data-page="planes">
+                        <i class="bi bi-tag-fill"></i>
+                        <span>Planes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('clinicas.index') }}" data-page="clinica">
+                        <i class="bi bi-hospital"></i>
+                        <span>Clinica(s)</span>
                     </a>
                 </li>
             </ul>

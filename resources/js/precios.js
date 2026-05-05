@@ -1,5 +1,5 @@
 /**
- * VetCare Pro - Pricing Page JavaScript
+ * VetSync - Pricing Page JavaScript
  * Handles billing toggle, animations, and interactions
  */
 

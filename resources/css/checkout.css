@@ -1,0 +1,1124 @@
+/* ========================================
+   VetSync - Checkout Styles
+   Estilo tipo Stripe moderno
+   ======================================== */
+
+/* Variables */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+    --secondary: #0f172a;
+    --success: #10b981;
+    --success-dark: #059669;
+    --success-light: #d1fae5;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --danger-light: #fee2e2;
+    --purple: #7c3aed;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --transition: all 0.3s ease;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--gray-800);
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+    min-height: 100vh;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.checkout-header {
+    background: white;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.logo-icon {
+    font-size: 1.75rem;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--success-light);
+    color: var(--success-dark);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.security-badge i {
+    font-size: 1rem;
+}
+
+/* ========================================
+   Progress Steps
+   ======================================== */
+.checkout-progress {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gray-100);
+    border: 2px solid var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--gray-400);
+    transition: var(--transition);
+}
+
+.step.active .step-icon {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.step.completed .step-icon {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+
+.step-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    transition: var(--transition);
+}
+
+.step.active .step-label,
+.step.completed .step-label {
+    color: var(--gray-900);
+}
+
+.step-line {
+    flex: 1;
+    height: 3px;
+    background: var(--gray-200);
+    min-width: 60px;
+    max-width: 100px;
+    transition: var(--transition);
+}
+
+.step-line.active {
+    background: var(--primary);
+}
+
+.step-line.completed {
+    background: var(--success);
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+.checkout-main {
+    padding: 2rem 0 4rem;
+}
+
+/* Form Container */
+.checkout-form-container {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.checkout-step {
+    display: none;
+    padding: 2rem;
+}
+
+.checkout-step.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-header {
+    margin-bottom: 2rem;
+}
+
+.step-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+/* Input Styles */
+.form-label {
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    font-size: 1.125rem;
+}
+
+.input-icon .form-control {
+    padding-left: 3rem;
+}
+
+.form-control,
+.form-select {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: var(--danger);
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+    box-shadow: 0 0 0 4px var(--danger-light);
+}
+
+/* Step Actions */
+.step-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.btn-continue,
+.btn-pay {
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.btn-pay {
+    background: linear-gradient(135deg, var(--success) 0%, var(--success-dark) 100%);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+.btn-pay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px var(--success);
+}
+
+.btn-pay:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   Payment Methods
+   ======================================== */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.payment-method:hover {
+    border-color: var(--gray-300);
+}
+
+.payment-method.active {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.payment-method.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.method-radio {
+    display: flex;
+    align-items: center;
+}
+
+.method-radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+}
+
+.method-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.method-logo {
+    height: 32px;
+    object-fit: contain;
+}
+
+.method-icon {
+    font-size: 2rem;
+    color: var(--gray-500);
+}
+
+.method-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.method-info strong {
+    color: var(--gray-900);
+}
+
+.method-info span {
+    font-size: 0.875rem;
+}
+
+.payment-method .badge {
+    position: absolute;
+    right: 1rem;
+}
+
+/* Terms */
+.terms-check {
+    padding: 1rem;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+}
+
+.terms-check a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.terms-check a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   Order Summary
+   ======================================== */
+.order-summary {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: sticky;
+    top: 100px;
+}
+
+.summary-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.summary-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.summary-body {
+    padding: 1.5rem;
+}
+
+/* Plan Card */
+.plan-card {
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-light) 100%);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-bottom-left-radius: var(--radius);
+}
+
+.plan-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.plan-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.plan-info h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.plan-period {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    padding: 0.375rem 0;
+}
+
+.plan-features i {
+    color: var(--success);
+    font-size: 1rem;
+}
+
+/* Pricing Details */
+.pricing-details {
+    padding: 1rem 0;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 1.5rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+}
+
+.price-row.discount {
+    color: var(--success);
+}
+
+.price-row.total {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 2px solid var(--gray-200);
+}
+
+/* Security Info */
+.security-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.security-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.security-item i {
+    font-size: 1.125rem;
+    color: var(--success);
+}
+
+/* Payment Logos */
+.payment-logos {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.powered-by {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    margin-bottom: 0.75rem;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.epayco-logo {
+    height: 28px;
+    opacity: 0.8;
+}
+
+.pse-logo {
+    height: 24px;
+    opacity: 0.8;
+}
+
+/* Checkout Help */
+.checkout-help {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.checkout-help i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.checkout-help strong {
+    display: block;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.checkout-help p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+.checkout-help a {
+    color: var(--primary);
+}
+
+/* ========================================
+   Confirmation States
+   ======================================== */
+.confirmation-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.confirmation-state {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.confirmation-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 3rem;
+}
+
+.confirmation-icon.success {
+    background: var(--success-light);
+    color: var(--success);
+    animation: successPop 0.5s ease;
+}
+
+.confirmation-icon.error {
+    background: var(--danger-light);
+    color: var(--danger);
+    animation: errorShake 0.5s ease;
+}
+
+@keyframes successPop {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes errorShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+.confirmation-content h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.confirmation-details {
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: var(--gray-500);
+}
+
+.detail-value {
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.detail-row.total {
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 2px solid var(--gray-300);
+    border-bottom: none;
+}
+
+.detail-row.total .detail-value {
+    font-size: 1.25rem;
+    color: var(--success);
+}
+
+.confirmation-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-actions .btn {
+    padding: 1rem 2rem;
+    font-weight: 600;
+}
+
+.confirmation-email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    color: var(--primary);
+    font-size: 0.875rem;
+}
+
+.error-details {
+    margin: 2rem 0;
+}
+
+/* ========================================
+   Processing Modal
+   ======================================== */
+.processing-modal {
+    border: none;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.processing-modal .modal-body {
+    padding: 3rem 2rem;
+}
+
+.epayco-header {
+    margin-bottom: 2rem;
+}
+
+.modal-epayco-logo {
+    height: 40px;
+}
+
+.processing-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.bank-animation {
+    width: 60px;
+    height: 60px;
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--gray-600);
+    animation: pulse 1.5s ease infinite;
+}
+
+.pse-animation {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    animation: pulse 1.5s ease infinite 0.5s;
+}
+
+.pse-animation img {
+    height: 30px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.processing-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.processing-dots span {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: dotBounce 1.4s ease infinite;
+}
+
+.processing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.processing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotBounce {
+    0%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+}
+
+.processing-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.processing-text {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin-bottom: 0.25rem;
+}
+
+.processing-subtext {
+    font-size: 0.875rem;
+}
+
+.processing-progress {
+    margin-top: 2rem;
+}
+
+.processing-progress .progress {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--gray-200);
+}
+
+.processing-progress .progress-bar {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--success) 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Bank State */
+.bank-header {
+    margin-bottom: 1.5rem;
+}
+
+.bank-logo {
+    width: 80px;
+    height: 80px;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2.5rem;
+    color: var(--gray-600);
+}
+
+.bank-header h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.bank-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
+.bank-message i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.bank-message p {
+    margin: 0;
+    color: var(--gray-700);
+}
+
+.transaction-info {
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9375rem;
+}
+
+.info-row span {
+    color: var(--gray-500);
+}
+
+.info-row strong {
+    color: var(--gray-900);
+}
+
+.bank-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bank-loader span {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 991.98px) {
+    .order-summary {
+        position: static;
+        margin-top: 2rem;
+    }
+
+    .checkout-main {
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .checkout-header .container {
+        padding: 0 1rem;
+    }
+
+    .security-badge span {
+        display: none;
+    }
+
+    .progress-steps {
+        gap: 0;
+    }
+
+    .step-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
+
+    .step-line {
+        min-width: 40px;
+    }
+
+    .checkout-step {
+        padding: 1.5rem;
+    }
+
+    .step-actions {
+        flex-direction: column-reverse;
+    }
+
+    .step-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
+
+    .confirmation-actions .btn {
+        width: 100%;
+    }
+
+    .processing-animation {
+        transform: scale(0.85);
+    }
+}
+
+/* ========================================
+   Loading States
+   ======================================== */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn-loading .btn-text {
+    opacity: 0;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-success {
+    color: var(--success) !important;
+}
+
+.text-danger {
+    color: var(--danger) !important;
+}
+
+.text-muted {
+    color: var(--gray-500) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-success {
+    background-color: var(--success) !important;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-secondary {
+    color: var(--gray-600);
+    border-color: var(--gray-300);
+}
+
+.btn-outline-secondary:hover {
+    background: var(--gray-100);
+    border-color: var(--gray-400);
+    color: var(--gray-800);
+}

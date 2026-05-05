@@ -21,6 +21,9 @@ export default defineConfig({
                 'resources/css/historial.css',
                 'resources/css/prescripciones.css',
                 'resources/css/precios.css',
+                'resources/css/planes.css',
+                'resources/css/checkout.css',
+                'resources/css/clinicas.css',
 
                 'resources/js/sistema.js',
                 'resources/js/dashboard.js',
@@ -32,6 +35,9 @@ export default defineConfig({
                 'resources/js/historial.js',
                 'resources/js/prescripciones.js',
                 'resources/js/precios.js',
+                'resources/js/planes.js',
+                'resources/js/checkout.js',
+                'resources/js/clinicas.js',
 
                 // Clientes
                 'resources/js/clientes/principal.js',

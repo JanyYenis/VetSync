@@ -1,5 +1,5 @@
 /* ========================================
-   VetCare Pro - Dashboard Styles (SaaS)
+   VetSync - Dashboard Styles (SaaS)
    ======================================== */
 
 /* Variables */
@@ -38,6 +38,15 @@
     --radius-lg: 1rem;
     --radius-xl: 1.5rem;
     --transition: all 0.3s ease;
+    --border-color: #e2e8f0;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
 }
 
 /* Dark Theme */

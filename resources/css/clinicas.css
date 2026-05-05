@@ -1,0 +1,679 @@
+/* Selector de clínica activa */
+.clinic-selector .btn {
+    border-radius: var(--radius-lg);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.clinic-selector .btn:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+}
+
+.clinic-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    background-color: var(--light-color);
+}
+
+.clinic-selector .dropdown-menu {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    min-width: 280px;
+}
+
+.clinic-selector .dropdown-item {
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.clinic-selector .dropdown-item:hover {
+    background-color: var(--primary-light);
+}
+
+.clinic-selector .dropdown-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.clinic-selector .dropdown-item img {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    margin-right: 0.75rem;
+}
+
+/* Avatar usuario */
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}
+
+/* ========================================
+   TARJETAS DE ESTADÍSTICAS
+======================================== */
+.stat-card {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+}
+
+/* ========================================
+   CARDS DE CLÍNICAS
+======================================== */
+.clinic-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.clinic-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.clinic-card.is-active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-light), var(--shadow-md);
+}
+
+.clinic-card-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+.clinic-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    background-color: var(--light-color);
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.clinic-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.clinic-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.clinic-nit {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.clinic-location {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.clinic-location i {
+    color: var(--primary-color);
+}
+
+/* Badges */
+.active-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.badge-active {
+    background-color: var(--success-color) !important;
+}
+
+.badge-inactive {
+    background-color: var(--secondary-color) !important;
+}
+
+.badge-current {
+    background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+}
+
+/* Card Body */
+.clinic-card-body {
+    padding: 0 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.clinic-contact {
+    padding: 1rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    width: 16px;
+}
+
+.contact-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Redes sociales */
+.clinic-social {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.social-link.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-link.facebook {
+    background-color: #1877f2;
+}
+
+.social-link.tiktok {
+    background-color: #000000;
+}
+
+.social-link.disabled {
+    background-color: var(--border-color);
+    pointer-events: none;
+}
+
+/* Card Footer */
+.clinic-card-footer {
+    padding: 1rem 1.5rem;
+    background-color: var(--light-color);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.clinic-card-footer .btn {
+    flex: 1;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+}
+
+/* ========================================
+   MODAL DE CLÍNICA
+======================================== */
+.modal-content {
+    border-radius: var(--radius-xl);
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.modal-title i {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 0.5rem 1.5rem 1.5rem;
+}
+
+/* Logo Upload */
+.logo-upload-section {
+    background-color: var(--light-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.logo-preview-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.logo-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: var(--shadow-md);
+}
+
+.logo-upload-btn {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.logo-upload-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Form Sections */
+.form-section-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+}
+
+.form-section-title i {
+    color: var(--primary-color);
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: var(--radius);
+    border-color: var(--border-color);
+    padding: 0.625rem 0.875rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.input-group-text {
+    background-color: var(--light-color);
+    border-color: var(--border-color);
+    color: var(--secondary-color);
+}
+
+/* Social Icons in Form */
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border: none;
+}
+
+.social-icon.facebook {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+}
+
+.social-icon.tiktok {
+    background-color: #000000;
+    color: white;
+    border: none;
+}
+
+/* Form Switch */
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* ========================================
+   MODAL DE ELIMINACIÓN
+======================================== */
+.delete-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #fef2f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.delete-icon i {
+    font-size: 2.5rem;
+    color: var(--danger-color);
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+.btn {
+    font-weight: 500;
+    border-radius: var(--radius);
+    padding: 0.625rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--border-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--light-color);
+    border-color: var(--border-color);
+    color: var(--dark-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* ========================================
+   TOAST NOTIFICATIONS
+======================================== */
+.toast {
+    border-radius: var(--radius-lg);
+}
+
+/* ========================================
+   ESTADO VACÍO
+======================================== */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.empty-state-icon {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.empty-state-icon i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.empty-state h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 991.98px) {
+    .clinic-selector {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .clinic-selector .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .clinic-selector .dropdown-menu {
+        width: 100%;
+    }
+
+    .user-avatar {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-header .row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .page-header .col-auto {
+        width: 100%;
+    }
+
+    .page-header .btn {
+        width: 100%;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .clinic-card-footer {
+        flex-direction: column;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .main-content {
+        padding-top: 0.5rem;
+    }
+
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .clinic-card-header {
+        padding: 1rem;
+    }
+
+    .clinic-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .clinic-card-body,
+    .clinic-card-footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* ========================================
+   ANIMACIONES
+======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.clinic-card {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.clinic-card:nth-child(1) { animation-delay: 0.05s; }
+.clinic-card:nth-child(2) { animation-delay: 0.1s; }
+.clinic-card:nth-child(3) { animation-delay: 0.15s; }
+.clinic-card:nth-child(4) { animation-delay: 0.2s; }
+.clinic-card:nth-child(5) { animation-delay: 0.25s; }
+.clinic-card:nth-child(6) { animation-delay: 0.3s; }
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Highlight animation */
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+.highlight {
+    animation: highlight 0.6s ease;
+}
